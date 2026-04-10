@@ -1,64 +1,121 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width , initial-scale=1.0">
-        <link rel="stylesheet" href="styles3.css">
-        <title>Marioclub</title>
-        
-    </head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles3.css" />
+    <title>Marioclub</title>
+  </head>
 
-    <body>
-        <header class="heading">
-            <h1>MARIOCLUB</h1>
-        </header>
+  <body>
+    <header class="heading">
+      <div class="header-inner">
+        <h1>MARIOCLUB</h1>
+        <p class="tagline">Power-ups, tournaments, and new adventures every week.</p>
+      </div>
+    </header>
 
-        <section class="banner">
-            <img src="./mario.jpg" alt="front">
-            <div class="front">
-                <h2 class="welcome">Marioclub</h2>
-                
-            </div>
-        </section>
+    <section class="banner" aria-label="Featured Marioclub hero banner">
+      <img src="./mario.jpg" alt="Mario smiling in front of colorful scenery" />
+      <div class="front">
+        <h2 class="welcome">Welcome to Marioclub</h2>
+        <p>Play. Compete. Collect stars.</p>
+        <a href="#join" class="cta">Join the Club</a>
+      </div>
+    </section>
 
-        <div class="navi">
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="/join.html" class="join"> Join club</a></li>
-                    <li><a href="/news.html">Latest news</a></li>
-                    <li><a href="/games.html">New games</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
-                </ul>
-            </nav>
+    <div class="navi">
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#join" class="join">Join Club</a></li>
+          <li><a href="#news">Latest News</a></li>
+          <li><a href="#games">New Games</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <article id="news">
+        <h2>It’s-a me, Mario!</h2>
+        <p>
+          Mario is one of the most iconic characters in gaming history. From his first appearance in
+          Donkey Kong (1981) to modern adventures on Nintendo Switch, he continues to inspire players of
+          all ages. Marioclub brings fans together through tournaments, game nights, speed-run challenges,
+          and exclusive community updates.
+        </p>
+      </article>
+
+      <section class="features" aria-label="Marioclub highlights">
+        <div class="feature-card">
+          <h3>Weekly Tournaments</h3>
+          <p>Compete with club members and climb the leaderboard for prizes.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Community Events</h3>
+          <p>Join themed nights, voice chats, and challenge sessions with fans.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Game Alerts</h3>
+          <p>Get updates on new releases, patches, and Mario universe announcements.</p>
+        </div>
+      </section>
+
+      <ul id="games" class="images">
+        <li><img src="./gamenew02.jpg" class="img1" alt="Screenshot from a Mario game" /></li>
+        <li><img src="./gamenew3.jpg" class="img2" alt="Mario gameplay action scene" /></li>
+      </ul>
+    </main>
+
+    <section id="join" class="join2">
+      <h2>Join Today</h2>
+      <p>Level up your fandom with exclusive updates, events, and tournaments.</p>
+
+      <form class="join-form" aria-label="Join Marioclub form">
+        <label for="name">Player Name</label>
+        <input id="name" type="text" name="name" placeholder="MarioFan92" required />
+
+        <label for="email">Email Address</label>
+        <input id="email" type="email" name="email" placeholder="you@example.com" required />
+
+        <label for="favorite-game">Favorite Mario Game</label>
+        <select id="favorite-game" name="favorite-game" required>
+          <option value="" disabled selected>Select one</option>
+          <option>Super Mario Bros. Wonder</option>
+          <option>Mario Kart 8 Deluxe</option>
+          <option>Super Mario Odyssey</option>
+          <option>Super Mario Bros. 3</option>
+          <option>Other</option>
+        </select>
+
+        <label for="skill-level">Skill Level</label>
+        <select id="skill-level" name="skill-level" required>
+          <option value="" disabled selected>Select your level</option>
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+          <option>Speedrunner</option>
+        </select>
+
+        <label for="message">Why do you want to join?</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          placeholder="Tell us what kind of events you'd love..."
+        ></textarea>
+
+        <div class="checkbox-row">
+          <input id="updates" type="checkbox" name="updates" checked />
+          <label for="updates">Send me tournament and event updates.</label>
         </div>
 
-        <main>
-            <article>
-                <h2>It's a me, Mario</h2>
-                <p>Mario is a fictional character created by Nintendo. He is one of the most iconic video game characters 
-                    and has appeared in numerous games, cartoons, and movies. Mario made his first appearance in the 
-                    arcade game Donkey Kong in 1981, where he was originally known as "Jumpman." However, he gained 
-                    widespread popularity as the main character in the game Super Mario Bros., released for the Nintendo 
-                    Entertainment System (NES) in 1985.Mario's popularity extends beyond video games. He has become a 
-                    cultural icon and is recognized worldwide. The Mario franchise has also expanded into other media, 
-                    such as animated TV shows and feature films. </p>
-            </article>
-            <ul class="images">
-                <li><img src="./gamenew02.jpg" class="img1" width="900px" alt="game2"></li>
-                <li><img src="./gamenew3.jpg" class="img2" width="900px" alt="game3"></li>
-            </ul>
-        </main>
+        <button type="submit">Start My Adventure</button>
+      </form>
+    </section>
 
-        <section class="join2">
-            <h2>Join today</h2>
-            <p>Enroll yourself to the marioclub today and stay tuned for further updates</p>
-            <form>
-                <input type="email" name="email" required >
-            </form>
-        </section>
-
-        <footer>
-            <p class="copyright">Copyright 2023 Marioclub</p>
-        </footer>
-
-    </body>
+    <footer id="contact">
+      <p class="copyright">Copyright 2026 Marioclub</p>
+    </footer>
+  </body>
 </html>
