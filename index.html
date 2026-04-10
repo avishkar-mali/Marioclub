@@ -76,7 +76,16 @@
         <input id="name" type="text" name="name" placeholder="MarioFan92" required />
 
         <label for="email">Email Address</label>
-        <input id="email" type="email" name="email" placeholder="you@example.com" required />
+        <input
+          id="email"
+          type="email"
+          name="email"
+          placeholder="you@example.com"
+          minlength="6"
+          maxlength="254"
+          title="Enter a valid email between 6 and 254 characters."
+          required
+        />
 
         <label for="favorite-game">Favorite Mario Game</label>
         <select id="favorite-game" name="favorite-game" required>
@@ -102,7 +111,11 @@
           id="message"
           name="message"
           rows="4"
+          minlength="20"
+          maxlength="300"
+          title="Please share at least 20 characters about why you want to join."
           placeholder="Tell us what kind of events you'd love..."
+          required
         ></textarea>
 
         <div class="checkbox-row">
@@ -113,6 +126,32 @@
         <button type="submit">Start My Adventure</button>
       </form>
     </section>
+
+
+    <script>
+      const joinForm = document.querySelector(".join-form");
+      const interestField = document.getElementById("message");
+
+      joinForm?.addEventListener("submit", (event) => {
+        const value = interestField.value.trim();
+        const wordCount = value.split(/\s+/).filter(Boolean).length;
+
+        if (wordCount < 5) {
+          interestField.setCustomValidity("Please include at least 5 words about why you want to join.");
+        } else {
+          interestField.setCustomValidity("");
+        }
+
+        if (!joinForm.checkValidity()) {
+          event.preventDefault();
+          joinForm.reportValidity();
+        }
+      });
+
+      interestField?.addEventListener("input", () => {
+        interestField.setCustomValidity("");
+      });
+    </script>
 
     <footer id="contact">
       <p class="copyright">Copyright 2026 Marioclub</p>
